@@ -21,7 +21,7 @@ COMMAND="${1:-deploy}"
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$PROJECT_DIR"
 
-COMPOSE="docker compose -f docker-compose.prod.yml"
+COMPOSE="docker compose -f docker-compose.prod.yml --env-file .env.production"
 
 # Colors
 RED='\033[0;31m'
