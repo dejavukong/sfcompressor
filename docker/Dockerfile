@@ -41,6 +41,9 @@ COPY --from=builder /app/public ./public
 # Copy server files needed at runtime (chat service, email, etc.)
 COPY --from=builder /app/server ./server
 
+# Ensure nextjs user can write to .next cache
+RUN chown -R nextjs:nodejs .next
+
 USER nextjs
 
 EXPOSE 3000
