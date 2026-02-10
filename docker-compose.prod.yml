@@ -35,8 +35,7 @@ services:
     image: nginx:alpine
     restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
+      - "2053:443"
     volumes:
       - ./docker/nginx/active.conf:/etc/nginx/conf.d/default.conf:ro
       - /etc/cloudflare:/etc/cloudflare:ro

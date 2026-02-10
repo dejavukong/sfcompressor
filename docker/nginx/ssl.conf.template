@@ -1,14 +1,4 @@
-# Redirect HTTP to HTTPS
-server {
-    listen 80;
-    server_name _;
-
-    location / {
-        return 301 https://$host$request_uri;
-    }
-}
-
-# HTTPS server
+# HTTPS server (Cloudflare → origin on port 2053)
 server {
     listen 443 ssl http2;
     server_name _;
