@@ -3,10 +3,6 @@ server {
     listen 80;
     server_name _;
 
-    location /.well-known/acme-challenge/ {
-        root /var/www/certbot;
-    }
-
     location / {
         return 301 https://$host$request_uri;
     }
@@ -17,9 +13,9 @@ server {
     listen 443 ssl http2;
     server_name _;
 
-    # SSL certificates (managed by certbot)
-    ssl_certificate /etc/letsencrypt/live/${DOMAIN}/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/${DOMAIN}/privkey.pem;
+    # Cloudflare Origin Certificate
+    ssl_certificate /etc/cloudflare/cert.pem;
+    ssl_certificate_key /etc/cloudflare/key.pem;
 
     # SSL configuration
     ssl_protocols TLSv1.2 TLSv1.3;
