@@ -1,0 +1,14 @@
+node_modules
+.next
+.git
+.gitignore
+*.md
+docker-compose*.yml
+.env*
+!.env.production
+client/
+drizzle/
+*.test.ts
+*.test.tsx
+__tests__/
+.claude/

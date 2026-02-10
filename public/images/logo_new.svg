@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" fill="none">
+  <!-- Icon: Abstract Compressor/Turbine Shape -->
+  <g transform="translate(20, 10)">
+    <!-- Main Blue Shape -->
+    <path d="M30 0C13.4315 0 0 13.4315 0 30C0 46.5685 13.4315 60 30 60H50C55.5228 60 60 55.5228 60 50V30C60 13.4315 46.5685 0 30 0Z" fill="#0138FF"/>
+    <!-- Lime Accent (Turbine Blade / S-curve) -->
+    <path d="M30 12C20.0589 12 12 20.0589 12 30C12 39.9411 20.0589 48 30 48H42C45.3137 48 48 45.3137 48 42V30C48 20.0589 39.9411 12 30 12Z" fill="#E6FCB6"/>
+    <!-- Inner Blue Dot -->
+    <circle cx="30" cy="30" r="6" fill="#0138FF"/>
+  </g>
+  
+  <!-- Text: SHUNFENG -->
+  <text x="90" y="52" font-family="Inter, Helvetica, Arial, sans-serif" font-weight="900" font-size="42" fill="#0138FF" letter-spacing="-1">SHUNFENG</text>
+</svg>
