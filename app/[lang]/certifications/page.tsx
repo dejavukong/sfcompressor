@@ -15,6 +15,7 @@ import {
   qualitySystems,
   patents,
   honors,
+  getPatentCertificateImage,
 } from '@/data/certifications';
 
 export async function generateMetadata({
@@ -208,28 +209,42 @@ export default async function Certifications({
             </Badge>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
-            {inventionPatents.map((patent) => (
-              <div
-                key={patent.id}
-                className="group relative bg-background rounded-xl border border-border/50 hover:border-amber-500/50 hover:shadow-lg transition-all overflow-hidden"
-              >
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-amber-500 rounded-l-xl" />
-                <div className="p-5 pl-6">
-                  <h4 className="font-semibold text-base mb-2 group-hover:text-amber-700 transition-colors">
-                    {patent.name[lang as Lang]}
-                  </h4>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <span className="font-mono text-xs bg-muted/50 px-2 py-0.5 rounded">
-                      {patent.number}
-                    </span>
-                    <span>
-                      {lang === 'zh' ? '授权' : 'Granted'}:{' '}
-                      {patent.authorizationDate}
-                    </span>
+            {inventionPatents.map((patent) => {
+              const certImage = getPatentCertificateImage(patent.id);
+              return (
+                <div
+                  key={patent.id}
+                  className="group relative bg-background rounded-xl border border-border/50 hover:border-amber-500/50 hover:shadow-lg transition-all overflow-hidden"
+                >
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-amber-500 rounded-l-xl" />
+                  <div className="p-5 pl-6">
+                    <h4 className="font-semibold text-base mb-2 group-hover:text-amber-700 transition-colors">
+                      {patent.name[lang as Lang]}
+                    </h4>
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                      <span className="font-mono text-xs bg-muted/50 px-2 py-0.5 rounded">
+                        {patent.number}
+                      </span>
+                      <span>
+                        {lang === 'zh' ? '授权' : 'Granted'}:{' '}
+                        {patent.authorizationDate}
+                      </span>
+                    </div>
                   </div>
+                  {certImage && (
+                    <div className="absolute right-0 top-0 w-[280px] h-[400px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 translate-x-[290px] -translate-y-4">
+                      <div className="bg-white rounded-xl shadow-2xl border border-border/50 p-3">
+                        <img
+                          src={certImage}
+                          alt={patent.name[lang as Lang]}
+                          className="w-full h-auto rounded-lg"
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -245,28 +260,42 @@ export default async function Certifications({
             </Badge>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {utilityPatents.map((patent) => (
-              <div
-                key={patent.id}
-                className="group relative bg-background rounded-lg border border-border/50 hover:border-blue-500/40 hover:shadow-md transition-all overflow-hidden"
-              >
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-l-lg" />
-                <div className="p-4 pl-5">
-                  <h4 className="font-medium text-sm leading-snug mb-2 group-hover:text-blue-700 transition-colors">
-                    {patent.name[lang as Lang]}
-                  </h4>
-                  <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                    <span className="font-mono bg-muted/50 px-1.5 py-0.5 rounded">
-                      {patent.number}
-                    </span>
-                    <span>
-                      {lang === 'zh' ? '授权' : 'Granted'}:{' '}
-                      {patent.authorizationDate}
-                    </span>
+            {utilityPatents.map((patent) => {
+              const certImage = getPatentCertificateImage(patent.id);
+              return (
+                <div
+                  key={patent.id}
+                  className="group relative bg-background rounded-lg border border-border/50 hover:border-blue-500/40 hover:shadow-md transition-all overflow-hidden"
+                >
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-l-lg" />
+                  <div className="p-4 pl-5">
+                    <h4 className="font-medium text-sm leading-snug mb-2 group-hover:text-blue-700 transition-colors">
+                      {patent.name[lang as Lang]}
+                    </h4>
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                      <span className="font-mono bg-muted/50 px-1.5 py-0.5 rounded">
+                        {patent.number}
+                      </span>
+                      <span>
+                        {lang === 'zh' ? '授权' : 'Granted'}:{' '}
+                        {patent.authorizationDate}
+                      </span>
+                    </div>
                   </div>
+                  {certImage && (
+                    <div className="absolute right-0 top-0 w-[240px] h-[340px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 translate-x-[250px] -translate-y-4">
+                      <div className="bg-white rounded-xl shadow-2xl border border-border/50 p-2">
+                        <img
+                          src={certImage}
+                          alt={patent.name[lang as Lang]}
+                          className="w-full h-auto rounded-lg"
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -291,12 +320,26 @@ export default async function Certifications({
               {honors.map((honor) => (
                 <div
                   key={honor.id}
-                  className="bg-background p-8 rounded-xl border border-border/50 hover:border-primary/50 transition-colors shadow-sm text-center"
+                  className="bg-background rounded-xl border border-border/50 hover:border-primary/50 transition-colors shadow-sm text-center overflow-hidden"
                 >
-                  <Trophy className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h4 className="text-lg font-semibold">
-                    {honor.name[lang as Lang]}
-                  </h4>
+                  {honor.image ? (
+                    <div className="aspect-[4/3] overflow-hidden bg-muted/30">
+                      <img
+                        src={honor.image}
+                        alt={honor.name[lang as Lang]}
+                        className="w-full h-full object-contain p-4"
+                      />
+                    </div>
+                  ) : (
+                    <div className="pt-8">
+                      <Trophy className="w-12 h-12 text-primary mx-auto" />
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <h4 className="text-lg font-semibold">
+                      {honor.name[lang as Lang]}
+                    </h4>
+                  </div>
                 </div>
               ))}
             </div>

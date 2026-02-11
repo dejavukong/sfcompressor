@@ -13,6 +13,10 @@ import {
   Settings,
   Hammer,
   RefreshCw,
+  Lightbulb,
+  Factory,
+  ShieldCheck,
+  Clock,
 } from 'lucide-react';
 import { getDictionary, type Lang } from '@/lib/i18n';
 
@@ -243,7 +247,7 @@ export default async function Service({
               </div>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/images/service_installation.jpg"
+                  src="/images/service-installation.jpg"
                   alt="Installation & Commissioning"
                   className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
                 />
@@ -296,7 +300,7 @@ export default async function Service({
               </div>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/images/service_maintenance.jpg"
+                  src="/images/service-maintenance.jpg"
                   alt="Maintenance Services"
                   className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
                 />
@@ -313,75 +317,57 @@ export default async function Service({
           <h2 className="text-3xl font-bold mb-12 text-center">
             {dict['service.core_title']}
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all border-t-4 border-t-primary">
               <CardHeader>
-                <Phone className="w-10 h-10 text-primary mb-4" />
-                <CardTitle>{dict['service.consulting']}</CardTitle>
+                <Lightbulb className="w-10 h-10 text-primary mb-4" />
+                <CardTitle>{dict['service.rd']}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  {dict['service.consulting_desc']}
+                  {dict['service.rd_desc']}
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• {dict['service.consulting_list1']}</li>
-                  <li>• {dict['service.consulting_list2']}</li>
-                  <li>• {dict['service.consulting_list3']}</li>
-                  <li>• {dict['service.consulting_list4']}</li>
+                  <li>• {dict['service.rd_list1']}</li>
+                  <li>• {dict['service.rd_list2']}</li>
+                  <li>• {dict['service.rd_list3']}</li>
+                  <li>• {dict['service.rd_list4']}</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all border-t-4 border-t-primary">
+              <Factory className="w-10 h-10 text-primary mb-4 ml-6 mt-6" />
+              <CardHeader className="pt-4">
+                <CardTitle>{dict['service.production']}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {dict['service.production_desc']}
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li>• {dict['service.production_list1']}</li>
+                  <li>• {dict['service.production_list2']}</li>
+                  <li>• {dict['service.production_list3']}</li>
+                  <li>• {dict['service.production_list4']}</li>
                 </ul>
               </CardContent>
             </Card>
 
             <Card className="bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all border-t-4 border-t-primary">
               <CardHeader>
-                <Wrench className="w-10 h-10 text-primary mb-4" />
-                <CardTitle>{dict['service.installation']}</CardTitle>
+                <ShieldCheck className="w-10 h-10 text-primary mb-4" />
+                <CardTitle>{dict['service.qc']}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  {dict['service.installation_desc']}
+                  {dict['service.qc_desc']}
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• {dict['service.installation_list1']}</li>
-                  <li>• {dict['service.installation_list2']}</li>
-                  <li>• {dict['service.installation_list3']}</li>
-                  <li>• {dict['service.installation_list4']}</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all border-t-4 border-t-primary">
-              <CardHeader>
-                <Headphones className="w-10 h-10 text-primary mb-4" />
-                <CardTitle>{dict['service.support']}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {dict['service.support_desc']}
-                </p>
-                <ul className="space-y-2 text-sm">
-                  <li>• {dict['service.support_list1']}</li>
-                  <li>• {dict['service.support_list2']}</li>
-                  <li>• {dict['service.support_list3']}</li>
-                  <li>• {dict['service.support_list4']}</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all border-t-4 border-t-primary">
-              <CardHeader>
-                <Package className="w-10 h-10 text-primary mb-4" />
-                <CardTitle>{dict['service.parts']}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {dict['service.parts_desc']}
-                </p>
-                <ul className="space-y-2 text-sm">
-                  <li>• {dict['service.parts_list1']}</li>
-                  <li>• {dict['service.parts_list2']}</li>
-                  <li>• {dict['service.parts_list3']}</li>
-                  <li>• {dict['service.parts_list4']}</li>
+                  <li>• {dict['service.qc_list1']}</li>
+                  <li>• {dict['service.qc_list2']}</li>
+                  <li>• {dict['service.qc_list3']}</li>
+                  <li>• {dict['service.qc_list4']}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -399,7 +385,7 @@ export default async function Service({
             </div>
           </div>
           <div>
-            <div className="text-4xl font-bold mb-2">&lt; 24h</div>
+            <div className="text-4xl font-bold mb-2">&lt; 48h</div>
             <div className="text-sm opacity-80">
               {dict['service.stats.port']}
             </div>
@@ -475,42 +461,24 @@ export default async function Service({
           </div>
 
           <div className="bg-muted rounded-xl min-h-[300px] flex items-center justify-center relative overflow-hidden">
-            <div className="relative z-10 grid grid-cols-3 gap-8 w-full max-w-md">
-              <div className="flex flex-col items-center animate-pulse">
-                <MapPin className="w-8 h-8 text-primary mb-2" />
-                <span className="text-xs font-bold">
+            <div className="relative z-10 grid grid-cols-2 gap-12 w-full max-w-sm">
+              <div className="flex flex-col items-center">
+                <MapPin className="w-8 h-8 text-primary mb-2 animate-pulse" />
+                <span className="text-sm font-bold">
                   {dict['service.network.china']}
                 </span>
+                <Badge variant="secondary" className="mt-2 text-xs">
+                  {dict['service.network.china_badge']}
+                </Badge>
               </div>
-              <div className="flex flex-col items-center animate-pulse">
-                <MapPin className="w-8 h-8 text-primary mb-2" />
-                <span className="text-xs font-bold">
+              <div className="flex flex-col items-center">
+                <MapPin className="w-8 h-8 text-primary mb-2 animate-pulse" />
+                <span className="text-sm font-bold">
                   {dict['service.network.singapore']}
                 </span>
-              </div>
-              <div className="flex flex-col items-center animate-pulse">
-                <MapPin className="w-8 h-8 text-primary mb-2" />
-                <span className="text-xs font-bold">
-                  {dict['service.network.rotterdam']}
-                </span>
-              </div>
-              <div className="flex flex-col items-center animate-pulse">
-                <MapPin className="w-8 h-8 text-primary mb-2" />
-                <span className="text-xs font-bold">
-                  {dict['service.network.houston']}
-                </span>
-              </div>
-              <div className="flex flex-col items-center animate-pulse">
-                <MapPin className="w-8 h-8 text-primary mb-2" />
-                <span className="text-xs font-bold">
-                  {dict['service.network.dubai']}
-                </span>
-              </div>
-              <div className="flex flex-col items-center animate-pulse">
-                <MapPin className="w-8 h-8 text-primary mb-2" />
-                <span className="text-xs font-bold">
-                  {dict['service.network.hamburg']}
-                </span>
+                <Badge variant="secondary" className="mt-2 text-xs">
+                  {dict['service.network.apac_badge']}
+                </Badge>
               </div>
             </div>
           </div>

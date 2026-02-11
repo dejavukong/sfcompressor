@@ -25,10 +25,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Detect preferred language from Accept-Language header
-  const acceptLang = request.headers.get('accept-language') ?? '';
-  const preferredLang = acceptLang.toLowerCase().startsWith('zh') ? 'zh' : 'en';
-  const lang = SUPPORTED_LANGS.includes(preferredLang) ? preferredLang : DEFAULT_LANG;
+  // Always default to Chinese
+  const lang = DEFAULT_LANG;
 
   // Redirect to localized path
   return NextResponse.redirect(new URL(`/${lang}${pathname || '/'}`, request.url));

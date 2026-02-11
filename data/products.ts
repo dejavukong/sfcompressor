@@ -82,7 +82,7 @@ export const products: Product[] = [
         'Ambient Temp: -5℃ ~ +55℃'
       ]
     },
-    image: '/images/products/marine_air_cooled.webp',
+    image: '/images/marine-air-cooled-type1-new.jpg',
     specs: {
       zh: {
         '排气量': '14.3 - 300 m³/h',
@@ -388,7 +388,7 @@ export const products: Product[] = [
         'Maintenance Interval: 4000-8000 hours'
       ]
     },
-    image: '/images/products/marine_screw.webp',
+    image: '/images/marine-screw-new.png',
     specs: {
       zh: {
         '排气量': '60 - 600 m³/h',
@@ -1135,7 +1135,7 @@ export const products: Product[] = [
         'Media: Compressed Air'
       ]
     },
-    image: '/images/products/parts_air_dryers.webp',
+    image: '/images/parts-dryers-rd-new.jpg',
     specs: {
       zh: {
         '处理量': '0.5 - 100 m³/min',
@@ -1275,7 +1275,7 @@ export const products: Product[] = [
         'Media: Compressed Air, Nitrogen'
       ]
     },
-    image: '/images/products/parts_filters.webp',
+    image: '/images/parts-filters-new.jpg',
     specs: {
       zh: {
         '过滤精度': '3μm / 1μm / 0.01μm',

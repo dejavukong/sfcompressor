@@ -33,16 +33,6 @@ const productCategories = [
     link: '/products/marine',
   },
   {
-    id: 'parts',
-    title: { zh: '压力容器及压缩机配件', en: 'Pressure Vessels & Compressor Parts' },
-    description: {
-      zh: '提供高品质的压力容器及各类压缩机配件。我们的压力容器产品包括储气罐、分离器、冷却器等，采用优质材料制造，符合国际压力容器设计标准。配件系列涵盖活塞环、气阀、轴承、密封件等核心部件，适配多种品牌和型号的压缩机。所有产品均经过严格的质量检测，确保与原厂配件同等的性能和可靠性，帮助您降低维护成本，延长设备使用寿命。',
-      en: 'High-quality pressure vessels and compressor parts meeting international standards. Includes air receivers, separators, coolers, and core components (piston rings, valves, bearings, seals). Compatible with multiple brands. Equivalent to OEM parts with reduced maintenance costs.',
-    },
-    image: '/images/product_pressure_vessel.png',
-    link: '/products/parts',
-  },
-  {
     id: 'industrial',
     title: { zh: '工艺压缩机', en: 'Process Compressor' },
     description: {
@@ -51,6 +41,16 @@ const productCategories = [
     },
     image: '/images/process-compressor.png',
     link: '/products/industrial',
+  },
+  {
+    id: 'parts',
+    title: { zh: '压力容器及压缩机配件', en: 'Pressure Vessels & Compressor Parts' },
+    description: {
+      zh: '提供高品质的压力容器及各类压缩机配件。我们的压力容器产品包括储气罐、分离器、冷却器等，采用优质材料制造，符合国际压力容器设计标准。配件系列涵盖活塞环、气阀、轴承、密封件等核心部件，适配多种品牌和型号的压缩机。所有产品均经过严格的质量检测，确保与原厂配件同等的性能和可靠性，帮助您降低维护成本，延长设备使用寿命。',
+      en: 'High-quality pressure vessels and compressor parts meeting international standards. Includes air receivers, separators, coolers, and core components (piston rings, valves, bearings, seals). Compatible with multiple brands. Equivalent to OEM parts with reduced maintenance costs.',
+    },
+    image: '/images/product_pressure_vessel.png',
+    link: '/products/parts',
   },
 ];
 

@@ -24,11 +24,11 @@ export async function generateMetadata({
 
   const isZh = lang === 'zh';
   const title = isZh
-    ? '顺风压缩机 - 专业船用压缩机制造商 | 60+年行业经验'
-    : 'Shunfeng Compressor - Marine Compressor Manufacturer | 60+ Years';
+    ? '顺风压缩机 – 专业压缩机制造商｜70+年行业经验'
+    : 'Shunfeng Compressor - Professional Compressor Manufacturer | 70+ Years';
   const description = isZh
-    ? '南京顺风压缩机，60+年船用压缩机研发制造经验，服务1000+船舶，覆盖100+国家。'
-    : 'Nanjing Shunfeng Compressor, 60+ years of marine compressor R&D and manufacturing, serving 1000+ vessels across 100+ countries.';
+    ? '南京顺风压缩机，70+年压缩机研发制造经验，服务超过10000+客户，覆盖30+国家。'
+    : 'Nanjing Shunfeng Compressor, 70+ years of compressor R&D and manufacturing, serving 10,000+ customers across 30+ countries.';
 
   return {
     title,

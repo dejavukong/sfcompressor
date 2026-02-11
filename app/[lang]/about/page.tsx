@@ -15,8 +15,8 @@ export async function generateMetadata({
       ? '关于我们 - 顺风压缩机'
       : 'About Us - Shunfeng Compressor',
     description: isZh
-      ? '南京顺风压缩机，30+年压缩机研发制造经验。'
-      : 'Nanjing Shunfeng Compressor, 30+ years of R&D and manufacturing.',
+      ? '南京顺风压缩机，70+年压缩机研发制造经验，服务超过10000+客户，覆盖30+国家。'
+      : 'Nanjing Shunfeng Compressor, 70+ years of compressor R&D and manufacturing, serving 10,000+ customers across 30+ countries.',
   };
 }
 
@@ -34,7 +34,7 @@ export default async function About({
       <section className="relative h-[50vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-primary/5">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/factory_interior.jpg"
+            src="/images/factory-interior-new.jpg"
             alt="Factory"
             className="w-full h-full object-cover opacity-20"
           />
@@ -84,17 +84,17 @@ export default async function About({
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <div className="text-5xl font-bold mb-2">30+</div>
+            <div className="text-5xl font-bold mb-2">70+</div>
             <div className="text-sm opacity-80">{dict['about.stats.years']}</div>
           </div>
           <div>
-            <div className="text-5xl font-bold mb-2">1000+</div>
+            <div className="text-5xl font-bold mb-2">2500+</div>
             <div className="text-sm opacity-80">
               {dict['about.stats.applications']}
             </div>
           </div>
           <div>
-            <div className="text-5xl font-bold mb-2">50+</div>
+            <div className="text-5xl font-bold mb-2">30+</div>
             <div className="text-sm opacity-80">
               {dict['about.stats.countries']}
             </div>

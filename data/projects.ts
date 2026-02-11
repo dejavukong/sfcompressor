@@ -18,7 +18,7 @@ export const projects: ProjectCase[] = [
       en: 'Adopts M-type symmetrically balanced reciprocating design with four-column, four-cylinder, three-stage compression. Flow rate is regulated by variable frequency drive. Cooling, sealing, and lubrication systems are optimally designed for stable on-site operation.',
     },
     image: '/images/products/industrial_process_m.webp',
-    sortOrder: 1,
+    sortOrder: 4,
   },
   {
     id: '2',
@@ -31,7 +31,7 @@ export const projects: ProjectCase[] = [
       en: 'Replaces imported equipment with smooth operation, achieving the same technical performance level as imported units.',
     },
     image: '/images/products/industrial_process_d.webp',
-    sortOrder: 2,
+    sortOrder: 5,
   },
   {
     id: '3',
@@ -44,7 +44,7 @@ export const projects: ProjectCase[] = [
       en: 'M-type symmetrically balanced piston skid-mounted design. Energy-efficient, easy to maintain and operate with 12,000–15,000 hours of continuous fault-free operation. Features standalone PLC control with LCD touchscreen for intelligent operation.',
     },
     image: '/images/products/industrial_process_m.png',
-    sortOrder: 3,
+    sortOrder: 6,
   },
   {
     id: '4',
@@ -57,7 +57,7 @@ export const projects: ProjectCase[] = [
       en: 'Built on years of theoretical and practical experience in methyl chloride compressor design and manufacturing. Continuously optimized components deliver high compression ratio, smooth operation, and environmentally friendly performance.',
     },
     image: '/images/products/industrial_process_l.webp',
-    sortOrder: 4,
+    sortOrder: 7,
   },
   {
     id: '6',
@@ -70,7 +70,7 @@ export const projects: ProjectCase[] = [
       en: 'Bilingual intelligent LCD touchscreen PLC control system for unattended, continuous operation. Modular skid-mounted design for easy installation, simple operation, and stable performance. Offshore drilling platforms require robust, reliable compressors due to limited space and remote locations. The harsh marine environment—high salinity, humidity, temperature, and UV exposure—accelerates corrosion. Our engineering team worked closely with the project owner to develop a modular purge system solution, delivering on time and passing acceptance testing.',
     },
     image: '/images/project_offshore.jpg',
-    sortOrder: 5,
+    sortOrder: 1,
   },
   {
     id: '7',
@@ -83,7 +83,7 @@ export const projects: ProjectCase[] = [
       en: 'Provides medium-to-high pressure starting air for main engines and generator sets. Marine-adapted heavy-duty design with anti-salt spray, anti-mold, and moisture-resistant components. Capable of continuous high-load operation with efficient and reliable cooling. Intelligent automatic control for auto start/stop, pressure maintenance, fault alarm, and switchover. Low-maintenance design ensures easy routine inspection and long-term vessel self-sufficiency.',
     },
     image: '/images/project_cargo_ship.jpg',
-    sortOrder: 6,
+    sortOrder: 2,
   },
   {
     id: '8',
@@ -96,6 +96,6 @@ export const projects: ProjectCase[] = [
       en: 'Main air receivers for main engine and auxiliary engine starting. Secondary air receivers for quick-closing valve control, whistle operation, and sea chest air purging. Available in Type A (vertical or inclined) and Type B (horizontal) configurations. Adaptable to various working pressures and application requirements.',
     },
     image: '/images/products/parts_air_receivers.webp',
-    sortOrder: 7,
+    sortOrder: 3,
   },
 ];

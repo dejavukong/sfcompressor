@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Globe, Menu } from 'lucide-react';
+import { Menu, Ship, Factory, Wrench } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -36,18 +36,101 @@ export function Header() {
     { href: '/contact', label: t('nav.contact'), match: (p: string) => p === '/contact' },
   ];
 
+  const productSubItems = [
+    {
+      href: '/products/marine',
+      label: language === 'zh' ? '船用压缩机' : 'Marine Compressor',
+      icon: Ship,
+    },
+    {
+      href: '/products/industrial',
+      label: language === 'zh' ? '工艺压缩机' : 'Process Compressor',
+      icon: Factory,
+    },
+    {
+      href: '/products/parts',
+      label: language === 'zh' ? '压力容器及配件' : 'Vessels & Parts',
+      icon: Wrench,
+    },
+  ];
+
   const NavLinks = ({ mobile = false }: { mobile?: boolean }) => (
     <>
-      {navItems.map((item) => (
-        <Link
-          key={item.href}
-          href={`/${language}${item.href}`}
-          onClick={() => mobile && setIsOpen(false)}
-          className={`text-sm font-medium uppercase tracking-wide transition-colors ${item.match(routePath) ? 'text-primary' : 'text-foreground/80 hover:text-primary'} ${mobile ? 'text-2xl py-2' : ''}`}
-        >
-          {item.label}
-        </Link>
-      ))}
+      {navItems.map((item) => {
+        const isProducts = item.href === '/products';
+        const isActive = item.match(routePath);
+
+        if (isProducts && !mobile) {
+          return (
+            <div key={item.href} className="relative group">
+              <Link
+                href={`/${language}${item.href}`}
+                className={`text-sm font-medium uppercase tracking-wide transition-colors ${isActive ? 'text-primary' : 'text-foreground/80 hover:text-primary'}`}
+              >
+                {item.label}
+              </Link>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-border/50 p-3 min-w-[220px]">
+                  {productSubItems.map((sub) => {
+                    const Icon = sub.icon;
+                    return (
+                      <Link
+                        key={sub.href}
+                        href={`/${language}${sub.href}`}
+                        className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/5 transition-colors"
+                      >
+                        <Icon className="w-4 h-4" />
+                        {sub.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        if (isProducts && mobile) {
+          return (
+            <div key={item.href}>
+              <Link
+                href={`/${language}${item.href}`}
+                onClick={() => setIsOpen(false)}
+                className={`text-2xl py-2 text-sm font-medium uppercase tracking-wide transition-colors ${isActive ? 'text-primary' : 'text-foreground/80 hover:text-primary'}`}
+              >
+                {item.label}
+              </Link>
+              <div className="pl-4 mt-2 space-y-2">
+                {productSubItems.map((sub) => {
+                  const Icon = sub.icon;
+                  return (
+                    <Link
+                      key={sub.href}
+                      href={`/${language}${sub.href}`}
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-3 py-1.5 text-lg text-foreground/60 hover:text-primary transition-colors"
+                    >
+                      <Icon className="w-4 h-4" />
+                      {sub.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        }
+
+        return (
+          <Link
+            key={item.href}
+            href={`/${language}${item.href}`}
+            onClick={() => mobile && setIsOpen(false)}
+            className={`text-sm font-medium uppercase tracking-wide transition-colors ${isActive ? 'text-primary' : 'text-foreground/80 hover:text-primary'} ${mobile ? 'text-2xl py-2' : ''}`}
+          >
+            {item.label}
+          </Link>
+        );
+      })}
     </>
   );
 
@@ -70,15 +153,21 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setLanguage(language === 'zh' ? 'en' : 'zh')}
-            className="text-foreground hover:bg-secondary hover:text-secondary-foreground font-medium rounded-full"
-          >
-            <Globe className="w-4 h-4 mr-2" />
-            {language === 'zh' ? '中文' : 'EN'}
-          </Button>
+          <div className="flex items-center gap-1 text-sm font-medium">
+            <button
+              onClick={() => setLanguage('zh')}
+              className={`px-2 py-1 rounded-full transition-colors ${language === 'zh' ? 'text-primary font-semibold' : 'text-foreground/50 hover:text-foreground/80'}`}
+            >
+              中文
+            </button>
+            <span className="text-foreground/30">|</span>
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-2 py-1 rounded-full transition-colors ${language === 'en' ? 'text-primary font-semibold' : 'text-foreground/50 hover:text-foreground/80'}`}
+            >
+              EN
+            </button>
+          </div>
           <Button
             size="sm"
             className="hidden md:flex rounded-full px-6 bg-primary hover:bg-primary/90 text-white font-medium shadow-lg shadow-primary/20 transition-all hover:scale-105"

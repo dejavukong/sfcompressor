@@ -79,7 +79,7 @@ export default async function Projects({
               </CardHeader>
 
               <CardContent className="flex-1 flex flex-col justify-between pt-0">
-                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {project.description[lang as Lang]}
                 </p>
               </CardContent>

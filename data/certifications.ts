@@ -23,12 +23,14 @@ export interface Patent {
   type: { zh: string; en: string };
   applicationDate: string;
   authorizationDate: string;
+  certificateImage?: string;
   sortOrder: number;
 }
 
 export interface Honor {
   id: string;
   name: { zh: string; en: string };
+  image?: string;
   sortOrder: number;
 }
 
@@ -217,7 +219,7 @@ export const patents: Patent[] = [
     id: '10',
     number: 'CN202111582076.6',
     name: { zh: '一种用于对称平衡式自由活塞压缩机的吊装机构', en: 'Lifting Mechanism for Symmetrically Balanced Free-Piston Compressors' },
-    type: { zh: '发明专利', en: 'Invention Patent' },
+    type: { zh: '实用新型', en: 'Utility Model' },
     applicationDate: '2021-12-22',
     authorizationDate: '2022-03-29',
     sortOrder: 17,
@@ -361,17 +363,35 @@ export const patents: Patent[] = [
     id: '26',
     number: 'CN201910196378.6',
     name: { zh: '一种皮带电机的导轨安装机构', en: 'Belt Motor Guide Rail Installation Mechanism' },
-    type: { zh: '发明专利', en: 'Invention Patent' },
+    type: { zh: '实用新型', en: 'Utility Model' },
     applicationDate: '2019-03-15',
     authorizationDate: '2019-09-06',
     sortOrder: 1,
   },
 ];
 
+// Patent ID → certificate image mapping
+// IDs 1-23 map to /images/patents/{id+3}.png, 24-26 map to Picture1-3.png
+export function getPatentCertificateImage(patentId: string): string {
+  const id = parseInt(patentId);
+  if (id >= 1 && id <= 23) return `/images/patents/${id + 3}.png`;
+  if (id === 24) return '/images/patents/Picture1.png';
+  if (id === 25) return '/images/patents/Picture2.png';
+  if (id === 26) return '/images/patents/Picture3.png';
+  return '';
+}
+
 export const honors: Honor[] = [
   {
-    id: '1',
-    name: { zh: '2024年度江苏省专精特新中小企业', en: '2024 Jiangsu Province Specialized, Refined, Distinctive, and Innovative SME' },
+    id: '2',
+    name: { zh: '南京市工程技术研究中心', en: 'Nanjing Engineering Technology Research Center' },
+    image: '/images/honor-nanjing-engineering-center.png',
+    sortOrder: 2,
+  },
+  {
+    id: '3',
+    name: { zh: '江苏省高新技术企业证书', en: 'Jiangsu Province High-Tech Enterprise Certificate' },
+    image: '/images/honor-high-tech-enterprise.png',
     sortOrder: 1,
   },
 ];

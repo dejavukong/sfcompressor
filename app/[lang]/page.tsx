@@ -17,7 +17,7 @@ export default async function Home({
       <section className="relative h-screen min-h-[800px] w-full overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/home_hero_bg.jpg"
+            src="/images/hero_bg.jpg"
             alt="Hero Background"
             className="w-full h-full object-cover scale-105 animate-slow-zoom"
           />
@@ -27,11 +27,6 @@ export default async function Home({
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 md:px-8 w-full text-center">
           <div className="animate-fade-in-up">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 text-white text-sm font-bold mb-10 border border-white/20 backdrop-blur-md shadow-lg">
-              <span className="w-2 h-2 rounded-full bg-secondary mr-3 animate-pulse shadow-[0_0_10px_#E6FCB6]" />
-              {dict['hero.badge']}
-            </div>
-
             <h1 className="text-7xl md:text-8xl lg:text-[10rem] font-black tracking-tighter text-white leading-[1.0] mb-10 drop-shadow-2xl">
               {dict['hero.title.prefix']} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-white/80">
@@ -39,7 +34,7 @@ export default async function Home({
               </span>
             </h1>
 
-            <p className="text-xl md:text-3xl text-white/90 leading-relaxed mb-14 max-w-3xl mx-auto font-medium drop-shadow-lg tracking-wider whitespace-pre-line">
+            <p className={`text-white/90 leading-relaxed mb-14 max-w-4xl mx-auto font-medium drop-shadow-lg whitespace-pre-line ${lang === 'zh' ? 'text-xl md:text-3xl tracking-wider' : 'text-base md:text-2xl tracking-wide'}`}>
               {dict['hero.subtitle']}
             </p>
 
@@ -72,21 +67,21 @@ export default async function Home({
           {[1, 2, 3, 4, 5, 6].map((i) => (
             <span key={i} className="inline-flex items-center gap-16 mx-16">
               <span className="text-white/90 text-2xl font-black uppercase tracking-wider">
-                60+{' '}
+                70+{' '}
                 <span className="text-lg font-medium ml-2">
                   {dict['marquee.years']}
                 </span>
               </span>
               <span className="text-white/40 text-4xl">•</span>
               <span className="text-white/90 text-2xl font-black uppercase tracking-wider">
-                1000+{' '}
+                2500+{' '}
                 <span className="text-lg font-medium ml-2">
                   {dict['marquee.vessels']}
                 </span>
               </span>
               <span className="text-white/40 text-4xl">•</span>
               <span className="text-white/90 text-2xl font-black uppercase tracking-wider">
-                100+{' '}
+                30+{' '}
                 <span className="text-lg font-medium ml-2">
                   {dict['marquee.countries']}
                 </span>
@@ -98,21 +93,21 @@ export default async function Home({
           {[1, 2, 3, 4, 5, 6].map((i) => (
             <span key={i} className="inline-flex items-center gap-16 mx-16">
               <span className="text-white/90 text-2xl font-black uppercase tracking-wider">
-                60+{' '}
+                70+{' '}
                 <span className="text-lg font-medium ml-2">
                   {dict['marquee.years']}
                 </span>
               </span>
               <span className="text-white/40 text-4xl">•</span>
               <span className="text-white/90 text-2xl font-black uppercase tracking-wider">
-                1000+{' '}
+                2500+{' '}
                 <span className="text-lg font-medium ml-2">
                   {dict['marquee.vessels']}
                 </span>
               </span>
               <span className="text-white/40 text-4xl">•</span>
               <span className="text-white/90 text-2xl font-black uppercase tracking-wider">
-                100+{' '}
+                30+{' '}
                 <span className="text-lg font-medium ml-2">
                   {dict['marquee.countries']}
                 </span>

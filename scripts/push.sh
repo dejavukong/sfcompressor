@@ -44,7 +44,6 @@ ssh "$SERVER" "
   docker load < $IMAGE_FILE
   rm -f $IMAGE_FILE
   cd $REMOTE_DIR
-  cp docker/nginx/ssl.conf.template docker/nginx/active.conf 2>/dev/null || cp docker/nginx/default-initial.conf docker/nginx/active.conf
   docker compose -f docker-compose.prod.yml --env-file .env.production up -d --no-build
 "
 
